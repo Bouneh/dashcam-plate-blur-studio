@@ -1,0 +1,31 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Python tests
+        run: python -m unittest discover -s tests -v
+      - name: JavaScript tests
+        run: node --test tests/test_i18n.js
+      - name: Syntax checks
+        run: |
+          python -m py_compile web_server.py web_processor.py model_setup.py entrypoint.py
+          node --check web/app.js
+          node --check web/i18n.js

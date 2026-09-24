@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-labelledby="title desc">
+  <title id="title">Plaque Studio</title>
+  <desc id="desc">Automatic license plate blurring for dashcam videos, with a local web interface.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#17263a"/></linearGradient>
+    <linearGradient id="road" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#203349"/><stop offset="1" stop-color="#2c4c5b"/></linearGradient>
+    <clipPath id="screen"><rect x="772" y="58" width="423" height="267" rx="17"/></clipPath>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#020817" flood-opacity=".48"/></filter>
+    <filter id="plateblur"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <rect width="1280" height="400" fill="url(#background)"/>
+  <path d="M0 1h1280M0 399h1280" stroke="#34475c" opacity=".5"/>
+  <circle cx="1250" cy="-49" r="270" fill="#60d39a" opacity=".045"/>
+  <circle cx="791" cy="425" r="229" fill="#5dcaa0" opacity=".055"/>
+  <g transform="translate(66 49)"><rect width="55" height="55" rx="15" fill="#b6f2be"/><rect x="10" y="16" width="35" height="23" rx="5" fill="#102332"/><rect x="15" y="21" width="25" height="13" rx="2" fill="#b6f2be"/><circle cx="17" cy="27.5" r="2" fill="#102332"/><circle cx="38" cy="27.5" r="2" fill="#102332"/></g>
+  <text x="66" y="156" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800" fill="#f3f8f5" letter-spacing="-2">Plaque Studio</text>
+  <text x="68" y="198" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#b8c9cc">Automatic license plate blur</text>
+  <text x="68" y="230" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#b8c9cc">for dashcam videos.</text>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="1.3">
+    <rect x="67" y="283" width="112" height="33" rx="16.5" fill="#b6f2be"/><text x="91" y="305" fill="#102332">LOCAL AI</text>
+    <rect x="190" y="283" width="105" height="33" rx="16.5" fill="#203849" stroke="#486576"/><text x="211" y="305" fill="#daebe2">DOCKER</text>
+    <rect x="306" y="283" width="89" height="33" rx="16.5" fill="#203849" stroke="#486576"/><text x="325" y="305" fill="#daebe2">EN / FR</text>
+  </g>
+  <g filter="url(#shadow)"><rect x="756" y="42" width="455" height="299" rx="28" fill="#07121f" stroke="#63877f" stroke-opacity=".55" stroke-width="2"/><rect x="772" y="58" width="423" height="267" rx="17" fill="#203448"/></g>
+  <g clip-path="url(#screen)">
+    <rect x="772" y="58" width="423" height="267" fill="#31515d"/>
+    <path d="M772 58h423v112l-78-37-85 32-81-46-88 34-91-13Z" fill="#3d686a"/>
+    <path d="M772 239 1195 167v158H772Z" fill="url(#road)"/>
+    <path d="m866 325 176-114m-2 114 92-124" stroke="#f6f2ce" stroke-width="5" stroke-dasharray="25 22" opacity=".75"/>
+    <path d="M870 202c14-22 44-27 72-25l48 10 45 34 23 49H840l9-44Z" fill="#d5e4e1" stroke="#102534" stroke-width="5"/>
+    <path d="m891 187 40-3 51 9 25 24H866Z" fill="#416675"/>
+    <rect x="844" y="245" width="210" height="22" rx="9" fill="#142b39"/>
+    <rect x="864" y="247" width="39" height="15" rx="5" fill="#f4f1dc"/>
+    <rect x="997" y="247" width="40" height="15" rx="5" fill="#f4f1dc"/>
+    <rect x="875" y="271" width="39" height="17" rx="7" fill="#0a1823"/>
+    <rect x="1005" y="271" width="39" height="17" rx="7" fill="#0a1823"/>
+    <rect x="921" y="247" width="72" height="22" rx="4" fill="#f8faf5"/>
+    <g filter="url(#plateblur)"><text x="927" y="263" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#152734">AB 283 CD</text></g>
+    <rect x="913" y="238" width="88" height="40" rx="5" fill="none" stroke="#9af0b5" stroke-width="3" stroke-dasharray="7 5"/>
+    <rect x="787" y="74" width="91" height="25" rx="12.5" fill="#0d2231" fill-opacity=".85"/><circle cx="803" cy="86.5" r="4" fill="#78e4ab"/><text x="815" y="91" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#e7f7eb">PLATE FOUND</text>
+    <rect x="1043" y="74" width="136" height="25" rx="12.5" fill="#0d2231" fill-opacity=".85"/><text x="1056" y="91" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#e7f7eb">PRIVATE BY DESIGN</text>
+  </g>
+  <circle cx="983" cy="333" r="3" fill="#80ad9c"/>
+</svg>

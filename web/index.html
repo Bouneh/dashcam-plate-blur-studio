@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090e17">
+  <meta name="description" content="Automatically blur license plates in your dashcam videos.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Plaque Studio — Video anonymization</title>
+  <link rel="stylesheet" href="/app.css">
+  <link rel="stylesheet" href="/i18n.css">
+  <script src="/i18n.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Plaque Studio, home" data-i18n-aria="brand_aria">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span class="brand-copy">PLAQUE<span>STUDIO</span><small data-i18n="brand_tagline">VIDEO ANONYMIZATION</small></span>
+      </a>
+      <div class="side-group-label" data-i18n="workspace">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation" data-i18n-aria="nav_aria">
+        <a class="side-link active" href="#studio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 9 5 3-5 3V9Z"/></svg><span data-i18n="nav_studio">Studio</span><span class="active-dot"></span></a>
+        <a class="side-link" href="#history"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 10h18M8 4v6M16 4v6"/></svg><span data-i18n="nav_history">History</span></a>
+      </nav>
+      <div class="side-bottom">
+        <div class="privacy-card"><span class="privacy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><strong data-i18n="local_processing">Local processing</strong><p data-i18n="local_processing_desc">Your videos stay on this device.</p></div>
+        <div class="side-footer"><span data-i18n="powered_by">POWERED BY YOLO</span> <span>●</span> FFmpeg</div>
+      </div>
+    </aside>
+
+    <main class="main" id="studio">
+      <header class="topbar">
+        <div class="breadcrumb"><span data-i18n="workspace_breadcrumb">Workspace</span> <span>/</span> <strong data-i18n="nav_studio">Studio</strong></div>
+        <div class="topbar-actions">
+          <div class="language-switch" role="group" aria-label="Language" data-i18n-aria="language_aria"><button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button><button type="button" data-lang="fr" lang="fr" aria-pressed="false">FR</button></div>
+          <div id="system-status" class="system-status"><span class="status-light"></span><span data-i18n="checking_engine">Checking engine…</span></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="eyebrow">PROTECT EVERY FRAME</span></div>
+            <h1><span data-i18n="hero_line1">Your videos.</span><br><em data-i18n="hero_line2">Your privacy.</em></h1>
+            <p data-i18n="hero_desc">Upload a video, let AI find the license plates, then preview and download your anonymized export.</p>
+            <div class="hero-chips"><span><b>01</b> <span data-i18n="step_upload">Upload</span></span><i></i><span><b>02</b> <span data-i18n="step_anonymize">Anonymize</span></span><i></i><span><b>03</b> <span data-i18n="step_export">Export</span></span></div>
+          </div>
+          <div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div><div class="art-orbit orbit-c"></div><div class="art-glow"></div><div class="art-frame"><span class="frame-corner tl"></span><span class="frame-corner tr"></span><span class="frame-corner bl"></span><span class="frame-corner br"></span><div class="art-plate"><div></div><div></div><div></div><div></div><div></div><div></div></div><div class="art-scan"></div><span class="art-tag"><span data-i18n="plate_detected">PLATE DETECTED</span> <b>●</b></span></div><div class="art-caption"><span data-i18n="smart_detection">SMART DETECTION</span> <span>↗</span></div></div>
+        </section>
+
+        <div class="workspace-grid">
+          <section class="panel upload-panel" aria-labelledby="upload-title">
+            <div class="section-heading"><div><span class="section-kicker" data-i18n="new_job">NEW JOB</span><h2 id="upload-title" data-i18n="upload_title">Upload a video</h2></div><span class="step-badge">01 / 02</span></div>
+            <label class="dropzone" id="dropzone" for="file-input"><input id="file-input" type="file" accept="video/*,.mkv,.avi,.wmv,.flv,.m4v" hidden><span class="upload-glyph"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21V5m0 0-6 6m6-6 6 6M5 20v5a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2v-5"/></svg></span><strong data-i18n="drop_title">Drop your video here</strong><span class="drop-sub"><span data-i18n="or">or</span> <u data-i18n="browse_files">browse files</u></span><small data-i18n="drop_formats">MP4, MOV, MKV, AVI and more · up to 4 GB</small></label>
+            <div class="selected-file" id="selected-file" hidden><span class="file-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9Z"/></svg></span><span class="file-info"><strong id="file-name"></strong><small id="file-size"></small></span><button type="button" class="icon-button" id="remove-file" aria-label="Remove video" data-i18n-aria="remove_video">×</button></div>
+            <div class="field-heading"><span data-i18n="blur_strength">BLUR STRENGTH</span><button class="info-button" type="button" title="The blur combines detail reduction and smoothing to hide the characters." aria-label="Blur information" data-i18n-title="blur_info_desc" data-i18n-aria="blur_info_aria">ⓘ</button></div>
+            <div class="strength-options" role="radiogroup" aria-label="Blur strength" data-i18n-aria="blur_strength_aria"><label><input type="radio" name="strength" value="1"><span data-i18n="strength_light">Light</span></label><label><input type="radio" name="strength" value="2" checked><span data-i18n="strength_balanced">Balanced</span></label><label><input type="radio" name="strength" value="3"><span data-i18n="strength_strong">Strong</span></label></div>
+            <p class="field-note" data-i18n="field_note">Only detected license plates are blurred. Audio is preserved.</p>
+            <button id="start-button" class="primary-button" type="button" disabled><span data-i18n="start">Start anonymization</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            <div class="upload-feedback" id="upload-feedback" role="status" aria-live="polite"></div>
+          </section>
+
+          <section class="panel viewer-panel" aria-labelledby="viewer-title">
+            <div class="viewer-heading"><div><span class="section-kicker" data-i18n="video_preview">VIDEO PREVIEW</span><h2 id="viewer-title" data-i18n="viewer_title">Viewer</h2></div><div class="viewer-tabs" role="tablist" aria-label="Video view" data-i18n-aria="video_view_aria"><button class="viewer-tab active" type="button" data-view="result" role="tab" aria-selected="true" data-i18n="tab_result">Result</button><button class="viewer-tab" type="button" data-view="source" role="tab" aria-selected="false" data-i18n="tab_original">Original</button><button class="viewer-tab" type="button" data-view="compare" role="tab" aria-selected="false" data-i18n="tab_compare">Compare</button></div></div>
+            <div class="viewer-stage" id="viewer-stage"><div class="empty-view" id="empty-view"><div class="empty-visual"><span class="empty-play">▶</span><span class="empty-cross cross-a">+</span><span class="empty-cross cross-b">+</span></div><strong data-i18n="empty_title">Your preview will appear here</strong><p data-i18n="empty_desc">Choose a video to get started.</p></div><video id="result-video" controls playsinline preload="metadata" hidden></video><video id="source-video" controls playsinline preload="metadata" hidden></video><div id="compare-view" class="compare-view" hidden><div><span data-i18n="compare_original">ORIGINAL</span><video id="compare-source" controls playsinline preload="metadata"></video></div><div><span data-i18n="compare_anonymized">ANONYMIZED</span><video id="compare-result" controls playsinline preload="metadata"></video></div></div><div class="viewer-watermark" id="viewer-watermark" hidden>PLAQUE STUDIO <span>●</span> <span data-i18n="preview_watermark">PREVIEW</span></div></div>
+            <div class="viewer-bottom"><div class="viewer-meta"><span class="meta-icon">◈</span><span id="viewer-filename" data-i18n="no_video">No video selected</span></div><a id="download-link" class="download-button" href="#" download="anonymized-video.mp4" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 17v3h16v-3"/></svg><span data-i18n="download">Download</span></a></div>
+          </section>
+        </div>
+
+        <section id="current-job" class="job-panel" hidden aria-live="polite"><div class="job-top"><div><span class="section-kicker" data-i18n="job_progress">JOB PROGRESS</span><h2 id="job-stage" data-i18n="stage_preparing">Preparing…</h2></div><span class="job-percent" id="job-percent">0%</span></div><div class="progress-track"><div id="job-progress" class="progress-fill"></div></div><div class="job-stats"><span id="job-detail" data-i18n="job_initial">The video will be processed frame by frame.</span><span id="job-regions" data-i18n="zero_regions">0 blurred regions</span></div></section>
+
+        <section class="history-section" id="history"><div class="history-heading"><div><span class="section-kicker" data-i18n="your_workspace">YOUR WORKSPACE</span><h2 data-i18n="recent_jobs">Recent jobs</h2></div><span class="history-count" id="history-count" data-i18n="zero_videos">0 videos</span></div><div class="history-list" id="history-list"><div class="history-empty" data-i18n="history_empty">No videos processed yet.</div></div></section>
+        <footer class="main-footer"><span>Plaque Studio <b>·</b> <span data-i18n="footer_private">Your videos stay on this device</span></span><span data-i18n="footer_powered">Powered by YOLO + FFmpeg</span></footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

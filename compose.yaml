@@ -1,0 +1,11 @@
+services:
+  studio:
+    build: .
+    ports:
+      - "127.0.0.1:${STUDIO_PORT:-8001}:8000"
+    environment:
+      DASHCAM_MAX_UPLOAD_GB: ${DASHCAM_MAX_UPLOAD_GB:-4}
+    volumes:
+      - ./model:/app/model
+      - ./web_data:/app/web_data
+    restart: unless-stopped

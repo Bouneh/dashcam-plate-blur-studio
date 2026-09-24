@@ -1,0 +1,42 @@
+# Local videos and generated jobs
+/videos/
+/original_video/
+/blurred_videos/
+/web_data/
+*.mp4
+*.mov
+*.MOV
+*.mkv
+*.avi
+*.wmv
+*.flv
+*.webm
+*.m4v
+
+# Downloaded model weights
+/model/*
+!/model/.gitkeep
+/model?/
+*.pt
+*.pth
+
+# Legacy batch outputs
+/runs/
+/yolo_run_final/
+/annot_jsons/
+/annot_txt/
+/images/*.png
+
+# Local environments and settings
+/venv/
+/.venv*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+.idea/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
