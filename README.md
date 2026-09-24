@@ -8,7 +8,7 @@
 
 **English** · [Français](README.fr.md) &nbsp; | &nbsp; Docker Compose · Python · YOLOv8 · FFmpeg · MIT
 
-## Start in one command
+## Quick start with Docker
 
 Install [Docker](https://docs.docker.com/get-docker/) with Compose, then run:
 
@@ -93,7 +93,7 @@ node --check web/i18n.js
 
 The web application uses `web_server.py`, `web_processor.py` and the files in `web/`. The original batch workflows remain available through `blur_images.py` and `blur_videos.py` with their respective YAML files in `configs/`.
 
-Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Maintainers can use [PUBLISHING.md](PUBLISHING.md) for suggested GitHub metadata and first-publication steps.
+Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Maintainers can use [PUBLISHING.md](PUBLISHING.md) for suggested GitHub metadata and release checks.
 
 ## Credits and license
 
